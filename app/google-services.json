@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "912960580654",
+    "project_id": "acdmobile2022",
+    "storage_bucket": "acdmobile2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912960580654:android:90225713e1da9fb66643bf",
+        "android_client_info": {
+          "package_name": "com.example.ACDMobile2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912960580654-dc18gp43tha98dcc3q54krlnsjpp5pas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ACDMobile2022",
+            "certificate_hash": "cae90a1a90d7584cf03497f834cc0eb50a63c458"
+          }
+        },
+        {
+          "client_id": "912960580654-tttvejgctunf0f1ttp8ooo68t1i6kv8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChkLjc0LdVpRxaJzyMtP_GV1hnOyg9jiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912960580654-tttvejgctunf0f1ttp8ooo68t1i6kv8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:background="@drawable/bg_arancione">
+    android:background="@drawable/bg_arancione"
+    tools:context=".LoginActivity">
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/frame_loginFragment"
+        android:layout_width="409dp"
+        android:layout_height="664dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/frame_loginFragment"
         app:layout_constraintTop_toTopOf="parent">
 
 
