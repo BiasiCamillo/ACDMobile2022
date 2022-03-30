@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item
+        android:id="@+id/ic_home"
+        android:title="@string/navigationbar_home"
         android:icon="@drawable/ic_home"
         android:actionLayout="@+id/home"/>
 
-    <item android:title="Login"
+    <item
+        android:id="@+id/ic_person"
+        android:title="@string/navigationbar_profile"
         android:icon="@drawable/ic_person"
         android:actionLayout="@+id/login"/>
 
-    <item android:title="Register"
-        android:icon="@drawable/ic_register"
+    <item
+        android:id="@+id/ic_settings"
+        android:title="@string/navigationbar_settings"
+        android:icon="@drawable/ic_settings"
         android:actionLayout="@+id/register"/>
 </menu>
