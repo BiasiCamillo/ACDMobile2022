@@ -3,6 +3,7 @@ package com.example.ACDMobile2022;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -16,21 +17,21 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class LoginActivity extends AppCompatActivity {
 
-       ActivityLoginBinding binding;
+      // ActivityLoginBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        callFragment();
 
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+
+      //  binding = ActivityLoginBinding.inflate(getLayoutInflater());
+       // View view = binding.getRoot();
+        //setContentView(view);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.ic_person);
-        LoginFragment loginFragment = (LoginFragment) getFragmentManager().findFragmentById(R.id.loginLayout);
+       // LoginFragment loginFragment = (LoginFragment) getFragmentManager().findFragmentById(R.id.loginLayout);
 
 
 
@@ -48,13 +49,21 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        callFragment();
 
 
     }
 
     public void openRegisterActivity (){
-        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(intent);
+        TextView dontHave = (TextView) findViewById(R.id.dontHaveAccount);
+        dontHave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void callFragment(){
