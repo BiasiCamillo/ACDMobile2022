@@ -1,5 +1,6 @@
 package com.example.ACDMobile2022;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(activityMainBinding.getRoot());
         replaceFragment(new HomeFragment());
+
+
         activityMainBinding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
 
@@ -33,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new HomeFragment());
                     break;
                 case R.id.ic_person:
-                    replaceFragment(new LoginFragment());
+                    Intent goLogin = new Intent(this, LoginActivity.class);
+                    startActivity(goLogin);
+
                     break;
                 case R.id.ic_settings:
                     replaceFragment(new SettingsFragment());
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    private void replaceFragment(Fragment fragment){
+    public void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout,fragment);

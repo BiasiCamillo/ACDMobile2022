@@ -1,31 +1,40 @@
 package com.example.ACDMobile2022;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.ACDMobile2022.Fragment.LoginFragment;
-import com.example.ACDMobile2022.Fragment.RegisterFragment;
-import com.example.ACDMobile2022.databinding.FragmentLoginBinding;
+import com.example.ACDMobile2022.databinding.ActivityLoginBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 public class LoginActivity extends AppCompatActivity {
 
-    FragmentLoginBinding binding;
+       ActivityLoginBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Toast.makeText(getApplicationContext(),"Cliccato!",Toast.LENGTH_LONG);
-        Log.d("Ciao","ciao");
+        callFragment();
+
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.ic_person);
+        LoginFragment loginFragment = (LoginFragment) getFragmentManager().findFragmentById(R.id.loginLayout);
+
+
+
+
 
 
     }
@@ -39,22 +48,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        binding = FragmentLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        // Inflate the layout for this fragment
-        Toast.makeText(getApplicationContext(),"Cliccato!",Toast.LENGTH_LONG);
-        binding.dontHaveAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Cliccato!",Toast.LENGTH_LONG);
-                replaceFragment(new RegisterFragment());
-            }
-        });
+
 
     }
 
     public void openRegisterActivity (){
         Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent);
+    }
+
+    public void callFragment(){
+        LoginFragment loginFragment = new LoginFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, loginFragment).commit();
     }
 }
