@@ -51,14 +51,14 @@ public class LoginFragment extends Fragment {
         return v;
     }
 
-    public void goToRegister(){
-        binding = FragmentLoginBinding.inflate(getLayoutInflater());
-        binding.dontHaveAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Ciao3","ciao3");
-                ((MainActivity)getActivity()).replaceFragment(new RegisterFragment());
-            }
-        });
-    }
+   // public void goToRegister(){
+     //   binding = FragmentLoginBinding.inflate(getLayoutInflater());
+       // binding.dontHaveAccount.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+           // public void onClick(View view) {
+             //   Log.d("Ciao3","ciao3");
+               // ((MainActivity)getActivity()).replaceFragment(new RegisterFragment());
+            //}
+        //});
+    //}
 }
