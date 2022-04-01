@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
 
+
     @Override
     protected void onDestroy() {
         Toast.makeText(this, "L'app è stata chiusa", Toast.LENGTH_SHORT).show();
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
 
     }
-
+        //Gestione del permesso
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -129,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
+                    Toast.makeText(this,"Permesso abilitato",Toast.LENGTH_SHORT).show();
                     //Viene attivata la fotocamera
                 } else {
 
@@ -144,12 +146,14 @@ public class MainActivity extends AppCompatActivity {
 
                         grantResults [0]= PackageManager.PERMISSION_GRANTED;
 
+
                         }
                     });
                     gestionePermessoRifiutato.setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-
+                         System.exit(2);
+                         //   onDestroy();
                         }
                     });
 
@@ -161,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
