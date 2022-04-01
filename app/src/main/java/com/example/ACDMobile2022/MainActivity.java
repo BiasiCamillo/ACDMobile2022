@@ -2,6 +2,8 @@ package com.example.ACDMobile2022;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button button;
     ActivityMainBinding activityMainBinding;
+    private Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new HomeFragment());
 
 
+
         activityMainBinding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
 
                 case R.id.ic_home:
-                    replaceFragment(new HomeFragment());
+                    Intent goHome = new Intent(getApplicationContext(),LoginActivity.class);
+                    startActivity(goHome);
                     break;
                 case R.id.ic_person:
                     Intent goLogin = new Intent(this, LoginActivity.class);
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                     break;
                 case R.id.ic_settings:
-                    replaceFragment(new SettingsFragment());
+                    //Intent goSettings = new Intent()
                     break;
             }
 
@@ -93,4 +98,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar,menu);
+        return true;
+
+    }
 }
