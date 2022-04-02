@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_bar_secondo_item_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search"
+        app:showAsAction="ifRoom"
+
+        />
+
+    <item
+        android:id="@+id/action_bar_terzo_info"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Info"
+        app:showAsAction="ifRoom"
+
+        />
+
+    <item
+        android:id="@+id/action_bar_quarto_item_aggiungi_percorso"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Aggiungi percorso"
+        app:showAsAction="never"
+
+        />
+
+    <item
+        android:id="@+id/action_bar_quinto_item_visualizza_percorso"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="Visualizza percorso"
+        app:showAsAction="never"
+
+        />
+
+    <item
+        android:id="@+id/action_bar_sesto_item_visualizza_percorso"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Modifica percorso"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_bar_settimo_item_elimina_percorso"
+        android:icon="@android:drawable/ic_delete"
+        android:title="Elimina percorso"
+
+
+        app:showAsAction="never" />
+
+</menu>

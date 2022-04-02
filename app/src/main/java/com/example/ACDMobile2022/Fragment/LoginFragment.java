@@ -41,7 +41,11 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
          ((LoginActivity)getActivity()).openRegisterActivity();
+
+        ((LoginActivity)getActivity()).openRegisterActivity();
+
 
     }
 
@@ -50,16 +54,5 @@ public class LoginFragment extends Fragment {
         View v=inflater.inflate(R.layout.fragment_login, container, false);
 
         return v;
-    }
-
-    public void goToRegister(){
-        binding = FragmentLoginBinding.inflate(getLayoutInflater());
-        binding.dontHaveAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("Ciao3","ciao3");
-                ((MainActivity)getActivity()).replaceFragment(new RegisterFragment());
-            }
-        });
     }
 }
