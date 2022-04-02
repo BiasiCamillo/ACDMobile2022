@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.ACDMobile2022.Fragment.RegisterFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -15,21 +16,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.ic_person);
 
-        //TextView alreadyHaveAccount = (TextView) findViewById(R.id.alreadyHaveAccouynt);
-        //alreadyHaveAccount.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View view) {
-                //openLoginActivity();
+    }
 
-            }
-      //  });
-    //}
-
-  //  public void openLoginActivity(){
-    //    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-      //  startActivity(intent);
-    //}
 
     @Override
     protected void onStop() {
@@ -42,24 +33,30 @@ public class RegisterActivity extends AppCompatActivity {
         addRegisterFragment();
     }
 
-    public void addRegisterFragment(){
+    public void addRegisterFragment() {
 
         RegisterFragment registerFragment = new RegisterFragment();
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frame_register_activity,registerFragment)
+                .add(R.id.frame_register_activity, registerFragment)
                 .commit();
-
 
 
     }
 
+     public void alreadyHaveAnAccount(){
+        TextView alreadyAccount = (TextView) findViewById(R.id.alreadyHaveAccouynt);
+        alreadyAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(goLogin);
+            }
+        });
+    }
+
     public void sendRegister(){
-
-
-
-
 
     }
 

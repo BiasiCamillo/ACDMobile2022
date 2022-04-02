@@ -24,22 +24,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
-      //  binding = ActivityLoginBinding.inflate(getLayoutInflater());
-       // View view = binding.getRoot();
-        //setContentView(view);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.ic_person);
-       // LoginFragment loginFragment = (LoginFragment) getFragmentManager().findFragmentById(R.id.loginLayout);
-        String prova;
-
-
-
-
-
-
     }
+
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
