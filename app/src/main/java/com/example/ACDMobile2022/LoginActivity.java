@@ -26,7 +26,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.ic_person);
+
+        //LoginFragment loginFragment = (LoginFragment) getFragmentManager().findFragmentById(R.id.loginLayout);
+
+
+
+
+
     }
+
 
 
     private void replaceFragment(Fragment fragment){
@@ -45,8 +53,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void openRegisterActivity (){
+
+        TextView a = (TextView) findViewById(R.id.dontHaveAccount);
+        a.setOnClickListener(new View.OnClickListener() {
+
         TextView dontHave = (TextView) findViewById(R.id.dontHaveAccount);
         dontHave.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
