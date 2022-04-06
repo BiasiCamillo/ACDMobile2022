@@ -54,9 +54,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void openRegisterActivity (){
 
-        TextView a = (TextView) findViewById(R.id.dontHaveAccount);
-        a.setOnClickListener(new View.OnClickListener() {
-
         TextView dontHave = (TextView) findViewById(R.id.dontHaveAccount);
         dontHave.setOnClickListener(new View.OnClickListener() {
 

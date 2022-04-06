@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ACDMobile2022.Fragment.RegisterFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -60,6 +64,28 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    public void addAccountFirebase(){
+        EditText nickname = findViewById(R.id.inputNickname);
+        EditText email = findViewById(R.id.inputEmail);
+        EditText password = findViewById(R.id.inputPassword);
+        EditText confirmPassword = findViewById(R.id.inputConfirmPassword);
+        Button btnRegister = findViewById(R.id.buttonRegister);
+        DAOCuratoreFireBase dao = new DAOCuratoreFireBase();
+        Log.d("passo0","passo0");
+        btnRegister.setOnClickListener(view -> {
+            CuratoreFireBase curatore = new CuratoreFireBase(nickname.getText().toString(),email.getText().toString(),password.getText().toString());
+            dao.add(curatore).addOnSuccessListener(suc ->
+            {
+                Log.d("passo1","passo1");
+                Toast.makeText(this,"Riga aggiunta",Toast.LENGTH_SHORT).show();
+            }).addOnFailureListener(er ->{
+                Log.d("passo2","passo2");
+                Toast.makeText(this,""+er.getMessage(),Toast.LENGTH_SHORT).show();
+            });
+
+
+        });
+    }
 
 
 }

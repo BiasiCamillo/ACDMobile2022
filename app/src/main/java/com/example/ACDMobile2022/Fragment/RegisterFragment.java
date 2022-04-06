@@ -37,6 +37,7 @@ public class RegisterFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ((RegisterActivity)getActivity()).alreadyHaveAnAccount();
+        ((RegisterActivity) getActivity()).addAccountFirebase();
 
     }
 }
